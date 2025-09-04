@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Student Registration</title>
+    <title>Patient Registration</title>
 </head>
 <body>
-    <h2>Library Registration Form</h2>
+    <h2>Hospital Management System Form</h2>
     <form action="register.jsp" method="post">
     	<label>Email:</label>
         <input type="email" name="email" required><br><br> 
