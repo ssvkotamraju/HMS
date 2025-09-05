@@ -10,7 +10,6 @@
     <h3>What do you want to do?</h3>
     <ul>
         <li><a href="register.jsp">Patient Registration</a></li>
-        <li><a href="login.jsp">Login (future)</a></li>
     </ul>
 </body>
 </html>

@@ -1,42 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Patient Registration</title>
+    <title>Doctor Appointment</title>
 </head>
 <body>
-    <h2>Hospital Management System Form</h2>
+    <h2>Book a Doctor Appointment</h2>
     <form action="register.jsp" method="post">
-    	<label>Email:</label>
-        <input type="email" name="email" required><br><br> 
-           
-        <label>Name:</label>
-        <input type="text" name="name" required><br><br>       
-
-        <label>Password:</label>
-        <input type="password" name="password" required><br><br>
-
-        <label>Doctor Name</label>
-        <input type="text" name="Doctor Name"><br><br>
         
-        <label>Appointment Time</label>
-        <input type="text" name="Appointment Time"><br><br>
+        <label>Patient Name:</label>
+        <input type="text" name="patientName" required><br><br>
 
-        <input type="submit" value="Register">
+        <label>Email:</label>
+        <input type="email" name="email" required><br><br>
+
+        <label>Phone Number:</label>
+        <input type="text" name="phone" required><br><br>
+
+        <label>Select Department:</label>
+        <select name="department" required>
+            <option value="">--Select--</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Neurology">Neurology</option>
+            <option value="Orthopedics">Orthopedics</option>
+            <option value="Pediatrics">Pediatrics</option>
+            <option value="General Medicine">General Medicine</option>
+        </select><br><br>
+
+        <label>Preferred Doctor:</label>
+        <input type="text" name="doctorName"><br><br>
+
+        <label>Appointment Date:</label>
+        <input type="date" name="appointmentDate" required><br><br>
+
+        <label>Appointment Time:</label>
+        <input type="time" name="appointmentTime" required><br><br>
+
+        <input type="submit" value="Book Appointment">
     </form>
 
-    <%-- Simple JSP to display submitted values --%>
+    <%-- JSP code to display the submitted appointment details --%>
     <%
-        String name = request.getParameter("name");
+        String patientName = request.getParameter("patientName");
         String email = request.getParameter("email");
-        String DoctorName = request.getParameter("Doctor Name");
-        String AppointmentTime= request.getParameter("Appointment Time");
-        if (name != null && email != null) {
+        String phone = request.getParameter("phone");
+        String department = request.getParameter("department");
+        String doctorName = request.getParameter("doctorName");
+        String appointmentDate = request.getParameter("appointmentDate");
+        String appointmentTime = request.getParameter("appointmentTime");
+
+        if (patientName != null && appointmentDate != null) {
     %>
-        <h3>Registration Successful!</h3>
-        <p><b>Name:</b> <%= name %></p>
+        <h3>Appointment Booked Successfully!</h3>
+        <p><b>Patient Name:</b> <%= patientName %></p>
         <p><b>Email:</b> <%= email %></p>
-        <p><b>DoctorName</b> <%= DoctorName %></p>
-        <p><b>AppointmentTime</b> <%= AppointmentTime %></p>
+        <p><b>Phone:</b> <%= phone %></p>
+        <p><b>Department:</b> <%= department %></p>
+        <p><b>Doctor:</b> <%= doctorName %></p>
+        <p><b>Date:</b> <%= appointmentDate %></p>
+        <p><b>Time:</b> <%= appointmentTime %></p>
     <%
         }
     %>
