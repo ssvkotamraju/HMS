@@ -9,8 +9,7 @@
 
     <h3>What do you want to do?</h3>
     <ul>
-        <li><a href="register.jsp">Register as a Student</a></li>
-        <li><a href="login.jsp">Login (future)</a></li>
+        <li><a href="register.jsp">Patient Registration</a></li>
     </ul>
 </body>
 </html>
